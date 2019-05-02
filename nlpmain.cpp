@@ -1056,6 +1056,17 @@ class ObjManagement
 				else if(Node->getObjPointer()->__NetworkType==4)
 				{
 					cout<<"easyNLP>>[Running]RNN seq2seq(Deep neural network)"<<endl;
+					if(Node->getObjPointer()->__DEPTH>2)
+					{
+						char Confirm;
+						cout<<"easyNLP>>[Warning]Seq2Seq with two more layers may not work well,do you still want to run this model?(y/n)"<<endl;
+						cin>>Confirm;
+						if(Confirm!='y')
+						{
+							cout<<"easyNLP>>[Error]Running process cancelled"<<endl;
+							return;
+						}
+					}
 					DeepSeq2Seq __MainSeq("rnn",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 					if(!fopen(Node->getObjPointer()->__FileName_1,"r")||!fopen(Node->getObjPointer()->__FileName_2,"r")||!fopen(Node->getObjPointer()->__FileName_3,"r"))
 					{
@@ -1080,6 +1091,17 @@ class ObjManagement
 				else if(Node->getObjPointer()->__NetworkType==6)
 				{
 					cout<<"easyNLP>>[Running]LSTM seq2seq(Deep neural network)"<<endl;
+					if(Node->getObjPointer()->__DEPTH>2)
+					{
+						char Confirm;
+						cout<<"easyNLP>>[Warning]Seq2Seq with two more layers may not work well,do you still want to run this model?(y/n)"<<endl;
+						cin>>Confirm;
+						if(Confirm!='y')
+						{
+							cout<<"easyNLP>>[Error]Running process cancelled"<<endl;
+							return;
+						}
+					}
 					DeepSeq2Seq __MainSeq("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 					if(!fopen(Node->getObjPointer()->__FileName_1,"r")||!fopen(Node->getObjPointer()->__FileName_2,"r")||!fopen(Node->getObjPointer()->__FileName_3,"r"))
 					{
@@ -1104,6 +1126,17 @@ class ObjManagement
 				else if(Node->getObjPointer()->__NetworkType==8)
 				{
 					cout<<"easyNLP>>[Running]GRU seq2seq(Deep neural network)"<<endl;
+					if(Node->getObjPointer()->__DEPTH>2)
+					{
+						char Confirm;
+						cout<<"easyNLP>>[Warning]Seq2Seq with two more layers may not work well,do you still want to run this model?(y/n)"<<endl;
+						cin>>Confirm;
+						if(Confirm!='y')
+						{
+							cout<<"easyNLP>>[Error]Running process cancelled"<<endl;
+							return;
+						}
+					}
 					DeepSeq2Seq __MainSeq("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 					if(!fopen(Node->getObjPointer()->__FileName_1,"r")||!fopen(Node->getObjPointer()->__FileName_2,"r")||!fopen(Node->getObjPointer()->__FileName_3,"r"))
 					{
@@ -1128,6 +1161,17 @@ class ObjManagement
 				else if(Node->getObjPointer()->__NetworkType==10)
 				{
 					cout<<"easyNLP>>[Running]RNN seq2vec(Deep neural network)"<<endl;
+					if(Node->getObjPointer()->__DEPTH>2)
+					{
+						char Confirm;
+						cout<<"easyNLP>>[Warning]Seq2Vec with two more layers may not work well,do you still want to run this model?(y/n)"<<endl;
+						cin>>Confirm;
+						if(Confirm!='y')
+						{
+							cout<<"easyNLP>>[Error]Running process cancelled"<<endl;
+							return;
+						}
+					}
 					DeepSeq2Vec __MainVec("rnn",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 					if(!fopen(Node->getObjPointer()->__FileName_1,"r")||!fopen(Node->getObjPointer()->__FileName_2,"r"))
 					{
@@ -1152,6 +1196,17 @@ class ObjManagement
 				else if(Node->getObjPointer()->__NetworkType==12)
 				{
 					cout<<"easyNLP>>[Running]LSTM seq2vec(Deep neural network)"<<endl;
+					if(Node->getObjPointer()->__DEPTH>2)
+					{
+						char Confirm;
+						cout<<"easyNLP>>[Warning]Seq2Vec with two more layers may not work well,do you still want to run this model?(y/n)"<<endl;
+						cin>>Confirm;
+						if(Confirm!='y')
+						{
+							cout<<"easyNLP>>[Error]Running process cancelled"<<endl;
+							return;
+						}
+					}
 					DeepSeq2Vec __MainVec("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 					if(!fopen(Node->getObjPointer()->__FileName_1,"r")||!fopen(Node->getObjPointer()->__FileName_2,"r"))
 					{
@@ -1176,6 +1231,17 @@ class ObjManagement
 				else if(Node->getObjPointer()->__NetworkType==14)
 				{
 					cout<<"easyNLP>>[Running]GRU seq2vec(Deep neural network)"<<endl;
+					if(Node->getObjPointer()->__DEPTH>2)
+					{
+						char Confirm;
+						cout<<"easyNLP>>[Warning]Seq2Vec with two more layers may not work well,do you still want to run this model?(y/n)"<<endl;
+						cin>>Confirm;
+						if(Confirm!='y')
+						{
+							cout<<"easyNLP>>[Error]Running process cancelled"<<endl;
+							return;
+						}
+					}
 					DeepSeq2Vec __MainVec("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 					if(!fopen(Node->getObjPointer()->__FileName_1,"r")||!fopen(Node->getObjPointer()->__FileName_2,"r"))
 					{
@@ -1187,7 +1253,7 @@ class ObjManagement
 				}
 				else if(Node->getObjPointer()->__NetworkType==15)
 				{
-					cout<<"easyNLP>>[Running]GRU seq2vec(Deep neural network)"<<endl;
+					cout<<"easyNLP>>[Running]BP char2vec(Normal neural network)"<<endl;
 					Char2Vec __MainVec(Node->getObjPointer()->__HNUM);
 					__MainVec.TotalWork(Node->getObjPointer()->__FileName_1,Node->getObjPointer()->__FileName_8);
 				}

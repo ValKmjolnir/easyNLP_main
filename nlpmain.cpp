@@ -1027,6 +1027,7 @@ class ObjManagement
 					__MainBP.Datain(Node->getObjPointer()->__FileName_1);
 					__MainBP.SetFunction(Node->getObjPointer()->__Function);
 					__MainBP.SetLearningrate(Node->getObjPointer()->__LearningRate);
+					__MainBP.TotalWork(Node->getObjPointer()->__FileName_1,Node->getObjPointer()->__FileName_7,Node->getObjPointer()->__FileName_8);
 				}
 				else if(Node->getObjPointer()->__NetworkType==2)
 				{
@@ -1040,6 +1041,7 @@ class ObjManagement
 					__MainBP.Datain(Node->getObjPointer()->__FileName_1);
 					__MainBP.SetFunction(Node->getObjPointer()->__Function);
 					__MainBP.SetLearningrate(Node->getObjPointer()->__LearningRate);
+					__MainBP.TotalWork(Node->getObjPointer()->__FileName_1,Node->getObjPointer()->__FileName_7,Node->getObjPointer()->__FileName_8);
 				}
 				else if(Node->getObjPointer()->__NetworkType==3)
 				{

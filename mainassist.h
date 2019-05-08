@@ -1077,13 +1077,13 @@ void ObjManagement::RunModule()
 		if(Node->getObjPointer()->__NetworkType==1)
 		{
 			cout<<"easyNLP>>[Running]BP(Normal neural network)"<<endl;
-			NormalBP __MainBP(Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM);
-			if(!fopen(Node->getObjPointer()->__FileName_1,"r"))
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
 			{
-				__MainBP.INIT();
-				__MainBP.Dataout(Node->getObjPointer()->__FileName_1);
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
 			}
-			__MainBP.Datain(Node->getObjPointer()->__FileName_1);
+			NormalBP __MainBP(Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM);
 			__MainBP.SetFunction(Node->getObjPointer()->__Function);
 			__MainBP.SetLearningrate(Node->getObjPointer()->__LearningRate);
 			__MainBP.TotalWork(Node->getObjPointer()->__FileName_1,Node->getObjPointer()->__FileName_7,Node->getObjPointer()->__FileName_8);
@@ -1091,13 +1091,13 @@ void ObjManagement::RunModule()
 		else if(Node->getObjPointer()->__NetworkType==2)
 		{
 			cout<<"easyNLP>>[Running]BP(Deep neural network)"<<endl;
-			DeepBP __MainBP(Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH);
-			if(!fopen(Node->getObjPointer()->__FileName_1,"r"))
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
 			{
-				__MainBP.INIT();
-				__MainBP.Dataout(Node->getObjPointer()->__FileName_1);
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
 			}
-			__MainBP.Datain(Node->getObjPointer()->__FileName_1);
+			DeepBP __MainBP(Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH);
 			__MainBP.SetFunction(Node->getObjPointer()->__Function);
 			__MainBP.SetLearningrate(Node->getObjPointer()->__LearningRate);
 			__MainBP.TotalWork(Node->getObjPointer()->__FileName_1,Node->getObjPointer()->__FileName_7,Node->getObjPointer()->__FileName_8);
@@ -1105,6 +1105,12 @@ void ObjManagement::RunModule()
 		else if(Node->getObjPointer()->__NetworkType==3)
 		{
 			cout<<"easyNLP>>[Running]RNN seq2seq(Normal neural network)"<<endl;
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Seq __MainSeq("rnn",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			__MainSeq.SetFunction(Node->getObjPointer()->__Function);
 			__MainSeq.SetLearningRate(Node->getObjPointer()->__LearningRate);
@@ -1129,6 +1135,12 @@ void ObjManagement::RunModule()
 					return;
 				}
 			}
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			DeepSeq2Seq __MainSeq("rnn",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainSeq.SetFunction(Node->getObjPointer()->__Function);
 			__MainSeq.SetLearningRate(Node->getObjPointer()->__LearningRate);
@@ -1142,6 +1154,12 @@ void ObjManagement::RunModule()
 		else if(Node->getObjPointer()->__NetworkType==5)
 		{
 			cout<<"easyNLP>>[Running]LSTM seq2seq(Normal neural network)"<<endl;
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Seq __MainSeq("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			__MainSeq.SetFunction(Node->getObjPointer()->__Function);
 			__MainSeq.SetLearningRate(Node->getObjPointer()->__LearningRate);
@@ -1166,6 +1184,12 @@ void ObjManagement::RunModule()
 					return;
 				}
 			}
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Seq __MainSeq("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			//DeepSeq2Seq __MainSeq("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainSeq.SetFunction(Node->getObjPointer()->__Function);
@@ -1180,6 +1204,12 @@ void ObjManagement::RunModule()
 		else if(Node->getObjPointer()->__NetworkType==7)
 		{
 			cout<<"easyNLP>>[Running]GRU seq2seq(Normal neural network)"<<endl;
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Seq __MainSeq("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			__MainSeq.SetFunction(Node->getObjPointer()->__Function);
 			__MainSeq.SetLearningRate(Node->getObjPointer()->__LearningRate);
@@ -1204,6 +1234,12 @@ void ObjManagement::RunModule()
 					return;
 				}
 			}
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Seq __MainSeq("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			//DeepSeq2Seq __MainSeq("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainSeq.SetFunction(Node->getObjPointer()->__Function);
@@ -1218,6 +1254,12 @@ void ObjManagement::RunModule()
 		else if(Node->getObjPointer()->__NetworkType==9)
 		{
 			cout<<"easyNLP>>[Running]RNN seq2vec(Normal neural network)"<<endl;
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Vec __MainVec("rnn",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			__MainVec.SetFunction(Node->getObjPointer()->__Function);
 			__MainVec.SetLearningRate(Node->getObjPointer()->__LearningRate);
@@ -1238,6 +1280,12 @@ void ObjManagement::RunModule()
 					return;
 				}
 			}
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			DeepSeq2Vec __MainVec("rnn",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainVec.SetFunction(Node->getObjPointer()->__Function);
 			__MainVec.SetLearningRate(Node->getObjPointer()->__LearningRate);
@@ -1247,6 +1295,12 @@ void ObjManagement::RunModule()
 		else if(Node->getObjPointer()->__NetworkType==11)
 		{
 			cout<<"easyNLP>>[Running]LSTM seq2vec(Normal neural network)"<<endl;
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Vec __MainVec("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			__MainVec.SetFunction(Node->getObjPointer()->__Function);
 			__MainVec.SetLearningRate(Node->getObjPointer()->__LearningRate);
@@ -1267,6 +1321,12 @@ void ObjManagement::RunModule()
 					return;
 				}
 			}
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Vec __MainVec("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			//DeepSeq2Vec __MainVec("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainVec.SetFunction(Node->getObjPointer()->__Function);
@@ -1277,6 +1337,12 @@ void ObjManagement::RunModule()
 		else if(Node->getObjPointer()->__NetworkType==13)
 		{
 			cout<<"easyNLP>>[Running]GRU seq2vec(Normal neural network)"<<endl;
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Vec __MainVec("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			__MainVec.SetFunction(Node->getObjPointer()->__Function);
 			__MainVec.SetLearningRate(Node->getObjPointer()->__LearningRate);
@@ -1297,6 +1363,12 @@ void ObjManagement::RunModule()
 					return;
 				}
 			}
+			if(!fopen(Node->getObjPointer()->__FileName_7,"r")||!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			NormalSeq2Vec __MainVec("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
 			//DeepSeq2Vec __MainVec("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainVec.SetFunction(Node->getObjPointer()->__Function);
@@ -1307,6 +1379,12 @@ void ObjManagement::RunModule()
 		else if(Node->getObjPointer()->__NetworkType==15)
 		{
 			cout<<"easyNLP>>[Running]BP char2vec(Normal neural network)"<<endl;
+			if(!fopen(Node->getObjPointer()->__FileName_8,"r"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_8<<endl;
+				return;
+			}
 			Char2Vec __MainVec(Node->getObjPointer()->__HNUM);
 			__MainVec.TotalWork(Node->getObjPointer()->__FileName_1,Node->getObjPointer()->__FileName_8);
 		}

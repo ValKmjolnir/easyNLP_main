@@ -119,9 +119,16 @@ int main()
 			cin>>Sequencedata;
 			cout<<"easyNLP>>Please input the name of training data:";
 			cin>>Trainingdata;
-			cout<<"easyNLP>>Please input the length of every input sequence:";
-			cin>>maxtime;
-			Seq2VecDataMaker(Filename,Sequencedata,Trainingdata,maxtime);
+			if(!fopen(Filename,"r")||!fopen(Sequencedata,"w")||!fopen(Trainingdata,"w"))
+			{
+				cout<<"easyNLP>>[Error]Cannot open file."<<endl;
+			}
+			else
+			{
+				cout<<"easyNLP>>Please input the length of every input sequence:";
+				cin>>maxtime;
+				Seq2VecDataMaker(Filename,Sequencedata,Trainingdata,maxtime);
+			}
 		}
 		else if(Command=="11")
 		{

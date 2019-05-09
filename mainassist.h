@@ -1,5 +1,5 @@
 /*mainassist.h header file by ValK*/
-/*2019/5/7             version 1.0*/
+/*2019/5/9             version 1.1*/
 #ifndef __MAINASSIST_H__
 #define __MAINASSIST_H__
 #include "NLPann.h"
@@ -1190,8 +1190,7 @@ void ObjManagement::RunModule()
 				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
 				return;
 			}
-			NormalSeq2Seq __MainSeq("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
-			//DeepSeq2Seq __MainSeq("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
+			DeepSeq2Seq __MainSeq("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainSeq.SetFunction(Node->getObjPointer()->__Function);
 			__MainSeq.SetLearningRate(Node->getObjPointer()->__LearningRate);
 			__MainSeq.SetBatchSize(Node->getObjPointer()->__BatchSize);
@@ -1240,8 +1239,7 @@ void ObjManagement::RunModule()
 				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
 				return;
 			}
-			NormalSeq2Seq __MainSeq("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
-			//DeepSeq2Seq __MainSeq("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
+			DeepSeq2Seq __MainSeq("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainSeq.SetFunction(Node->getObjPointer()->__Function);
 			__MainSeq.SetLearningRate(Node->getObjPointer()->__LearningRate);
 			__MainSeq.SetBatchSize(Node->getObjPointer()->__BatchSize);
@@ -1327,8 +1325,7 @@ void ObjManagement::RunModule()
 				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
 				return;
 			}
-			NormalSeq2Vec __MainVec("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
-			//DeepSeq2Vec __MainVec("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
+			DeepSeq2Vec __MainVec("lstm",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainVec.SetFunction(Node->getObjPointer()->__Function);
 			__MainVec.SetLearningRate(Node->getObjPointer()->__LearningRate);
 			__MainVec.SetBatchSize(Node->getObjPointer()->__BatchSize);
@@ -1369,8 +1366,7 @@ void ObjManagement::RunModule()
 				cout<<"easyNLP>>[Lack] "<<Node->getObjPointer()->__FileName_7<<" and "<<Node->getObjPointer()->__FileName_8<<endl;
 				return;
 			}
-			NormalSeq2Vec __MainVec("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__MAXTIME);
-			//DeepSeq2Vec __MainVec("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
+			DeepSeq2Vec __MainVec("gru",Node->getObjPointer()->__INUM,Node->getObjPointer()->__HNUM,Node->getObjPointer()->__ONUM,Node->getObjPointer()->__DEPTH,Node->getObjPointer()->__MAXTIME);
 			__MainVec.SetFunction(Node->getObjPointer()->__Function);
 			__MainVec.SetLearningRate(Node->getObjPointer()->__LearningRate);
 			__MainVec.SetBatchSize(Node->getObjPointer()->__BatchSize);

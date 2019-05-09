@@ -32,7 +32,7 @@ void PrintHelp()
 //This function is used to remind users that some functions are not available until next version
 void PrintWarning()
 {
-	cout<<"easyNLP>>[Tips] [easyNLP-2019 version 1.2 by ValK]"<<endl;
+	cout<<"easyNLP>>[Tips] [easyNLP-2019 version 1.4 by ValK]"<<endl;
 	cout<<"         |BP neural networks can deal with all kinds of bp works"<<endl;
 	cout<<"         |Char2Vec model is used to calculate the probibility of next character"<<endl;
 	cout<<"         |Char2Vec now can deal with character between ASCII 32:' ' and 126:'~'"<<endl;
@@ -45,9 +45,7 @@ void PrintWarning()
 	cout<<"         |The MAXTIME of Seq2Vec decides the length of input sequence"<<endl;
 	cout<<"         |"<<endl;
 	cout<<"         |[Warning]Deep Seq2Seq or Seq2Vec may not have more than two layers or models will not work well!"<<endl;
-	cout<<"         |[Warning]Deep models which can work in this version is BP(Deep) and RNN(Deep)"<<endl;
-	cout<<"         |[Warning]DeepLSTM and DeepGRU has some problems inside and now are not available"<<endl;
-	cout<<"         |[Warning]But LSTM and GRU often works well in Normal models so just try NormalLSTM&GRU!"<<endl;
+	cout<<"         |[Warning]GRU doesn't work well on Deep Seq2Seq and Seq2Vec"<<endl;
 	cout<<"         |"<<endl;
 	cout<<"easyNLP>>You can find tips with command:\"t\" or \"tips\""<<endl;
 	return;
